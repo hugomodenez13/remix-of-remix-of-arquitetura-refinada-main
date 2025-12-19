@@ -4,11 +4,11 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // ADICIONE ESSA LINHA ABAIXO (substitua pelo nome do seu repositório)
-  base: "https://github.com/hugomodenez13/remix-of-remix-of-arquitetura-refinada-main.git", 
+  // AQUI ESTÁ A CORREÇÃO:
+  base: "/remix-of-remix-of-arquitetura-refinada-main/",
   
   server: {
-    host: "::", // Ou host: true, conforme falamos antes
+    host: "::",
     port: 8080,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),

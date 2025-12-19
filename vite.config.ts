@@ -3,13 +3,14 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // ADICIONE ESSA LINHA ABAIXO (substitua pelo nome do seu repositório)
+  base: "https://github.com/hugomodenez13/remix-of-remix-of-arquitetura-refinada-main.git", 
+  
   server: {
-    host: true, // Mudança aqui: 'true' ou remova a linha 'host'
+    host: "::", // Ou host: true, conforme falamos antes
     port: 8080,
   },
-  // ... resto do código igual
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {

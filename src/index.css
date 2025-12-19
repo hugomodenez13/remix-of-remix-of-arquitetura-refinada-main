@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm sophisticated palette */
+    --background: 40 30% 98%;
+    --foreground: 30 15% 15%;
+
+    --card: 40 25% 96%;
+    --card-foreground: 30 15% 15%;
+
+    --popover: 40 30% 98%;
+    --popover-foreground: 30 15% 15%;
+
+    /* Warm terracotta primary */
+    --primary: 20 45% 42%;
+    --primary-foreground: 40 30% 98%;
+
+    /* Light beige secondary */
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 30 15% 20%;
+
+    /* Muted warm tones */
+    --muted: 35 20% 90%;
+    --muted-foreground: 30 10% 45%;
+
+    /* Warm gold accent */
+    --accent: 35 40% 50%;
+    --accent-foreground: 40 30% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 20 45% 42%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --hero-overlay: 30 15% 10%;
+    --warm-cream: 40 35% 95%;
+    --charcoal: 30 15% 18%;
+    --terracotta: 20 45% 42%;
+    --terracotta-light: 20 40% 55%;
+    --sand: 35 30% 85%;
+    --stone: 30 10% 70%;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(30 15% 15% / 0.08);
+    --shadow-medium: 0 8px 30px -8px hsl(30 15% 15% / 0.12);
+    --shadow-strong: 0 20px 50px -15px hsl(30 15% 15% / 0.18);
+
+    /* Sidebar */
+    --sidebar-background: 40 25% 96%;
+    --sidebar-foreground: 30 15% 25%;
+    --sidebar-primary: 20 45% 42%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 35 25% 90%;
+    --sidebar-accent-foreground: 30 15% 20%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 20 45% 42%;
+  }
+
+  .dark {
+    --background: 30 15% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 30 15% 12%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 30 15% 10%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 20 40% 55%;
+    --primary-foreground: 30 15% 8%;
+
+    --secondary: 30 15% 18%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 30 12% 20%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 35 35% 45%;
+    --accent-foreground: 40 20% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 12% 22%;
+    --input: 30 12% 22%;
+    --ring: 20 40% 55%;
+
+    --hero-overlay: 30 15% 5%;
+    --warm-cream: 30 15% 15%;
+    --charcoal: 40 20% 90%;
+    --terracotta: 20 40% 55%;
+    --terracotta-light: 20 35% 65%;
+    --sand: 30 12% 25%;
+    --stone: 30 10% 40%;
+
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 20 40% 55%;
+    --sidebar-primary-foreground: 30 15% 8%;
+    --sidebar-accent: 30 12% 18%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 30 12% 20%;
+    --sidebar-ring: 20 40% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .heading-display {
+    @apply font-display font-medium tracking-tight;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 ease-out hover:shadow-strong hover:-translate-y-1;
+  }
+
+  .link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .image-reveal {
+    @apply overflow-hidden;
+  }
+
+  .image-reveal img {
+    @apply transition-transform duration-700 ease-out hover:scale-105;
+  }
+}
+
+@layer utilities {
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}

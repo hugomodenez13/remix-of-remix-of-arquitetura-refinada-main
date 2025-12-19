@@ -13,7 +13,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      {/* AQUI ESTÁ A CORREÇÃO: Adicionado o basename */}
+      <BrowserRouter basename="/remix-of-remix-of-arquitetura-refinada-main">
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
